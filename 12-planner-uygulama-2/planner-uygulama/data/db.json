@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Deneme 0",
+      "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+      "complete": false
+    },
+    {
+      "id": "2",
+      "title": "Deneme 2",
+      "detail": "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+      "complete": true
+    },
+    {
+      "id": "3",
+      "title": "Deneme 3",
+      "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ",
+      "complete": true
+    },
+    {
+      "id": "4",
+      "title": "Deneme 4",
+      "detail": "took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+      "complete": false
+    },
+    {
+      "id": "ea59",
+      "title": "Deneme 5",
+      "detail": "voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "complete": false
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<template>
+    <div :class="['projects', { complete: project.complete }]">
+      <div class="action">
+        <h3 @click="Showdetail = !Showdetail">{{ project.title }}</h3>
+        <div class="icons">
+          <span @click="toggleComplete" class="material-icons">check</span>
+          <router-link :to="{name:'EditProject', params: {id:project.id}}" ><span class="material-icons">edit</span></router-link>
+          <span @click="deleteProject" class="material-icons">delete</span>
+        </div>
+      </div>
+      <div v-if="Showdetail" class="detail">
+        <p>{{ project.detail }}</p>
+      </div>
+    </div>
+  </template>
+  
+
+<script>
+import { compile } from 'vue';
+
+export default {
+    props : ['project'],
+    data() {
+        return {
+            Showdetail : false,
+            uri : "http://localhost:3000/projects/"+ this.project.id
+        }
+    },
+    methods: {
+        deleteProject(){
+            fetch(this.uri ,{method : "DELETE"})
+            .then(()=> this.$emit('delete', this.project.id))
+        },
+        toggleComplete(){
+            fetch(this.uri,{
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({complete: !this.project.complete})
+            }).then(()=> this.$emit('complete', this.project.id)
+        ).catch(err => console.log(err))
+        }
+    },
+}
+</script>
+
+<style>
+.projects{
+    margin: 20px auto;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.05);
+    border-left: 4px solid #e90074;
+}
+h3{
+    cursor: pointer;
+}
+.action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.material-icons{
+    font-size: 24px;
+    color:#bbb;
+    cursor: pointer;
+    margin-left: 10px auto;
+}
+.material-icons:hover{
+    color: #999;
+}
+.projects.complete {
+  border-left: 4px solid green;
+}
+</style>
